@@ -4,11 +4,11 @@
 
 
 <!-- Mirrored from augustoseixascorretor.com.br/area?acao=logar by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 May 2026 22:43:54 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=iso-8859-1" /><!-- /Added by HTTrack -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área do Cliente</title>
+    <title>Ãrea do Cliente</title>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -262,7 +262,7 @@
             justify-content: center;
         }
 
-        /* Customização do SweetAlert2 */
+        /* CustomizaÃ§Ã£o do SweetAlert2 */
         .swal2-popup {
             font-family: 'Poppins', 'Ubuntu', Arial, sans-serif;
         }
@@ -297,8 +297,8 @@
 
         <div class="welcome">
             <h2>Bem-vindo de Volta</h2>
-            <p>Esta área é exclusiva para os clientes de nossa empresa.</p>
-            <p>Utilize os campos abaixo para fazer a sua identificação.</p>
+            <p>Esta Ã¡rea Ã© exclusiva para os clientes de nossa empresa.</p>
+            <p>Utilize os campos abaixo para fazer a sua identificaÃ§Ã£o.</p>
         </div>
 
         <form id="loginForm" method="POST">
@@ -334,7 +334,7 @@
                     <line x1="19" y1="12" x2="5" y2="12"></line>
                     <polyline points="12 19 5 12 12 5"></polyline>
                 </svg>
-                Voltar à Página Inicial
+                Voltar Ã  PÃ¡gina Inicial
             </a>
         </div>
     </div>
@@ -342,14 +342,14 @@
             document.addEventListener('DOMContentLoaded', function() {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Atenção',
-                    html: 'Erro de segurança: A verificação de segurança não foi completada. Por favor, tente novamente.',
+                    title: 'AtenÃ§Ã£o',
+                    html: 'Erro de seguranÃ§a: A verificaÃ§Ã£o de seguranÃ§a nÃ£o foi completada. Por favor, tente novamente.',
                     confirmButtonColor: '#2CA62F'
                 });
             });
         </script>
         <script>
-        // Toggle de visualização de senha
+        // Toggle de visualizaÃ§Ã£o de senha
         const togglePassword = document.getElementById('togglePassword');
         const passwordInput = document.getElementById('senha');
         const toggleIcon = togglePassword.querySelector('svg');
@@ -358,7 +358,7 @@
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
 
-            // Alterna o ícone do Lucide
+            // Alterna o Ã­cone do Lucide
             if (type === 'password') {
                 toggleIcon.setAttribute('data-lucide', 'eye');
                 updateIconSvg(toggleIcon, 'eye');
@@ -368,7 +368,7 @@
             }
         });
 
-        // Função para atualizar o SVG do ícone
+        // FunÃ§Ã£o para atualizar o SVG do Ã­cone
         function updateIconSvg(element, iconName) {
             if (iconName === 'eye') {
                 element.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
@@ -392,7 +392,7 @@
             messageListenerAdded = true;
         }
 
-        // Modifique o envio do formulário
+        // Modifique o envio do formulÃ¡rio
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -406,7 +406,7 @@
             if (login === '') {
                 Swal.fire({
                     icon: 'warning',
-                    title: 'Campo obrigatório',
+                    title: 'Campo obrigatÃ³rio',
                     text: 'Por favor, informe o login!',
                     confirmButtonColor: '#2CA62F'
                 });
@@ -417,7 +417,7 @@
             if (senha === '') {
                 Swal.fire({
                     icon: 'warning',
-                    title: 'Campo obrigatório',
+                    title: 'Campo obrigatÃ³rio',
                     text: 'Por favor, informe a senha!',
                     confirmButtonColor: '#2CA62F'
                 });
@@ -429,14 +429,14 @@
             if (!turnstileToken || !turnstileLoaded) {
                 Swal.fire({
                     icon: 'warning',
-                    title: 'Verificação Necessária',
-                    text: 'Por favor, complete a verificação de segurança antes de entrar.',
+                    title: 'VerificaÃ§Ã£o NecessÃ¡ria',
+                    text: 'Por favor, complete a verificaÃ§Ã£o de seguranÃ§a antes de entrar.',
                     confirmButtonColor: '#2CA62F'
                 });
                 return false;
             }
 
-            // Adiciona o token ao formulário
+            // Adiciona o token ao formulÃ¡rio
             let tokenInput = document.querySelector('input[name="cf-turnstile-response"]');
             if (!tokenInput) {
                 tokenInput = document.createElement('input');
