@@ -9,7 +9,7 @@ Repositorio com os arquivos estaticos do site `augustoseixascorretor.com.br`.
 - `imagens/`: imagens e identidade visual.
 
 ## Publicacao no GitHub
-1. Faça as alteracoes nos arquivos.
+1. Faca as alteracoes nos arquivos.
 2. Rode:
    ```bash
    git add -A
@@ -27,4 +27,4 @@ git push
 
 ## Observacoes
 - Branch principal: `main`.
-- Repositorio remoto: `AugustoSeixasCorretorAvaliador/imoveis`.
+- Repositorio remoto: `AugustoSeixasCorretorAvaliador/augustoseixascorretor`.
