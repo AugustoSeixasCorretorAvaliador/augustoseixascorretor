@@ -17,7 +17,7 @@ window.IMOVEIS_SEED = [
     "parking": 0,
     "area": "69",
     "status": "disponivel",
-    "featured": false,
+    "featured": true,
     "summary": "Loja comercial no miolo do Largo do Marrão, em frente à Caixa Econômica Federal, com excelente visibilidade e grande fluxo de pessoas.",
     "description": "Loja comercial localizada no coração do Largo do Marrão, uma das regiões mais movimentadas de Niterói. Em frente à Caixa Econômica Federal, cercada por bancos, farmácias, supermercados, comércio e transporte público. Imóvel com aproximadamente 156 m² distribuídos em três pavimentos, oferecendo grande flexibilidade para escritórios, cursos, consultórios, clínicas, serviços ou comércio em geral. Excelente oportunidade para empresas que buscam visibilidade, localização estratégica e fácil acesso.",
     "features": [
