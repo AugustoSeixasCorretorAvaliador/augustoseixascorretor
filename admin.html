@@ -50,25 +50,33 @@
         <label>ID<input name="id" required></label>
         <label>Referencia<input name="ref" required></label>
         <label>Titulo<input name="title" required></label>
-        <label>Tipo<input name="type" required></label>
-        <label>Finalidade<input name="purpose" required></label>
+        <label>Tipo<select name="type" required><option value="Apartamento">Apartamento</option><option value="Casa">Casa</option><option value="Loja Comercial">Loja Comercial</option><option value="Cobertura">Cobertura</option><option value="Terreno">Terreno</option><option value="Sala Comercial">Sala Comercial</option></select></label>
+        <label>Finalidade<select name="purpose" required><option value="Venda">Venda</option><option value="Aluguel">Aluguel</option><option value="Temporada">Temporada</option><option value="Permuta">Permuta</option></select></label>
         <label>Cidade<input name="city"></label>
-        <label>Estado<input name="state" value="RJ"></label>
+        <label>Estado<select name="state"><option value="RJ">RJ</option><option value="SP">SP</option><option value="MG">MG</option><option value="ES">ES</option></select></label>
         <label>Bairro<input name="neighborhood"></label>
-        <label>Preco<input name="price"></label>
-        <label>Condominio<input name="condo"></label>
-        <label>IPTU<input name="iptu"></label>
+        <label>Preco<input name="price" required inputmode="decimal" placeholder="5.000,00" pattern="\d{1,3}(\.\d{3})*,\d{2}" title="Use o formato 5.000,00"></label>
+        <label>Condominio<input name="condo" required inputmode="decimal" placeholder="5.000,00" pattern="\d{1,3}(\.\d{3})*,\d{2}" title="Use o formato 5.000,00"></label>
+        <label>IPTU<input name="iptu" required inputmode="decimal" placeholder="5.000,00" pattern="\d{1,3}(\.\d{3})*,\d{2}" title="Use o formato 5.000,00"></label>
         <label>Dormitorios<input name="bedrooms" type="number" min="0"></label>
         <label>Suites<input name="suites" type="number" min="0"></label>
         <label>Banheiros<input name="bathrooms" type="number" min="0"></label>
         <label>Vagas<input name="parking" type="number" min="0"></label>
         <label>Area<input name="area"></label>
-        <label>Status<select name="status"><option value="disponivel">Disponivel</option><option value="sob-proposta">Sob proposta</option><option value="vendido">Vendido</option><option value="oculto">Oculto</option></select></label>
+        <label>Status<select name="status"><option value="disponivel">Dispon&iacute;vel</option><option value="reservado">Reservado</option><option value="vendido">Vendido</option><option value="alugado">Alugado</option><option value="indisponivel">Indispon&iacute;vel</option><option value="em-breve">Em Breve</option></select></label>
       </div>
       <label>Resumo<textarea name="summary" rows="3"></textarea></label>
       <label>Descricao<textarea name="description" rows="7"></textarea></label>
       <label>Caracteristicas, separadas por virgula<textarea name="features" rows="3"></textarea></label>
+      <p class="hint">Sugest&atilde;o: use entre 8 e 20 caracter&iacute;sticas, separadas por v&iacute;rgula. Exemplo: Loja comercial, 156 m&sup2;, Frente para rua, Alto fluxo de pedestres, Excelente visibilidade.</p>
+      <p id="featuresCount" class="hint">0 caracter&iacute;sticas cadastradas</p>
       <label>Imagens, uma por linha<textarea name="images" rows="5"></textarea></label>
+      <p class="hint">Informe uma imagem por linha, sem aspas, sem v&iacute;rgulas e sem colchetes. Exemplo: assets/imoveis/469001.jpg</p>
+      <div class="image-generator">
+        <label>Prefixo das imagens<input id="imagePrefix" type="text" inputmode="numeric" placeholder="469"></label>
+        <label>Quantidade<input id="imageCount" type="number" min="1" step="1" placeholder="21"></label>
+        <button id="generateImagesBtn" type="button">Gerar lista</button>
+      </div>
       <div class="editor-actions">
         <label><input name="featured" type="checkbox"> Destaque</label>
         <button id="duplicateBtn" type="button">Duplicar</button>

@@ -30,8 +30,16 @@
   }
 
   function statusLabel(status) {
-    const labels = { "sob-proposta": "Sob proposta", vendido: "Vendido", oculto: "Oculto" };
-    return labels[status] || "Disponivel";
+    const labels = {
+      "sob-proposta": "Sob proposta",
+      reservado: "Reservado",
+      vendido: "Vendido",
+      alugado: "Alugado",
+      indisponivel: "Indispon\u00edvel",
+      "em-breve": "Em Breve",
+      oculto: "Oculto"
+    };
+    return labels[status] || "Dispon\u00edvel";
   }
 
   function facts(item) {
@@ -45,10 +53,19 @@
     ].filter(Boolean);
   }
 
+  function money(value) {
+    const raw = String(value || "").trim();
+    if (!raw) return "";
+    const amount = raw.replace(/^R\$\s*/i, "");
+    if (/^\d{1,3}(\.\d{3})*,\d{2}$/.test(amount)) return `R$ ${amount}`;
+    if (/^\d{1,3}(\.\d{3})+$/.test(amount)) return `R$ ${amount},00`;
+    return raw;
+  }
+
   function costs(item) {
     return [
-      item.condo ? `Condominio: ${item.condo}` : "",
-      item.iptu ? `IPTU: ${item.iptu}` : ""
+      item.condo ? `Condominio: ${money(item.condo)}` : "",
+      item.iptu ? `IPTU: ${money(item.iptu)}` : ""
     ].filter(Boolean);
   }
 
@@ -66,7 +83,7 @@
       <div class="card-body">
         <span class="status ${item.status}">${statusLabel(item.status)}</span>
         <h2>${item.type}, ${item.neighborhood}</h2>
-        <span class="price">${item.price || "Consulte"}</span>
+        <span class="price">${money(item.price) || "Consulte"}</span>
         ${costsHtml(item)}
         <p>${item.summary || ""}</p>
         <div class="facts">${facts(item).map((fact) => `<span>${fact}</span>`).join("")}</div>
@@ -99,11 +116,11 @@
     location.hash = `imovel-${item.id}`;
     detail.innerHTML = `
       <section class="detail">
-        <div class="gallery">${(item.images || []).slice(0, 7).map((src) => `<img src="${src}" alt="${item.title}">`).join("")}</div>
+        <div class="gallery">${(item.images || []).map((src) => `<img src="${src}" alt="${item.title}">`).join("")}</div>
         <div class="detail-info">
           <span class="status ${item.status}">${statusLabel(item.status)}</span>
           <h1>${item.title}</h1>
-          <span class="price">${item.price || "Consulte"}</span>
+          <span class="price">${money(item.price) || "Consulte"}</span>
           ${costsHtml(item)}
           <div class="facts">${facts(item).map((fact) => `<span>${fact}</span>`).join("")}</div>
           <p>${item.description || item.summary || ""}</p>

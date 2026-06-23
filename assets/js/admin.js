@@ -6,6 +6,16 @@
   const itemsEl = document.querySelector("#adminItems");
   const form = document.querySelector("#propertyForm");
   const formTitle = document.querySelector("#formTitle");
+  const featuresCount = document.querySelector("#featuresCount");
+  const imagePrefix = document.querySelector("#imagePrefix");
+  const imageCount = document.querySelector("#imageCount");
+  const generateImagesBtn = document.querySelector("#generateImagesBtn");
+  const legacyLabels = {
+    "sob-proposta": "Sob proposta",
+    oculto: "Oculto"
+  };
+  const currencyFields = ["price", "condo", "iptu"];
+  const currencyPattern = /^\d{1,3}(\.\d{3})*,\d{2}$/;
 
   function saveLocal() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(properties));
@@ -30,6 +40,37 @@
     }));
   }
 
+  function ensureSelectOption(field, value) {
+    if (!field || field.tagName !== "SELECT" || !value) return;
+    const exists = [...field.options].some((option) => option.value === value);
+    if (exists) return;
+    field.append(new Option(legacyLabels[value] || value, value));
+  }
+
+  function countFeatures() {
+    return form.elements.features.value.split(",").map((item) => item.trim()).filter(Boolean).length;
+  }
+
+  function normalizeCurrency(value) {
+    const raw = String(value || "").trim().replace(/^R\$\s*/i, "");
+    if (!raw) return "";
+    if (currencyPattern.test(raw)) return raw;
+
+    const digits = raw.replace(/\D/g, "");
+    if (!digits) return raw;
+
+    const cents = raw.includes(",") ? digits.slice(-2).padStart(2, "0") : "00";
+    const integerDigits = raw.includes(",") ? digits.slice(0, -2) || "0" : digits;
+    const integer = Number(integerDigits).toLocaleString("pt-BR");
+    return `${integer},${cents}`;
+  }
+
+  function updateFeaturesCount() {
+    if (!featuresCount) return;
+    const total = countFeatures();
+    featuresCount.textContent = `${total} ${total === 1 ? "caracter\u00edstica cadastrada" : "caracter\u00edsticas cadastradas"}`;
+  }
+
   function fillForm() {
     const item = current();
     if (!item) return;
@@ -39,8 +80,12 @@
       if (!field) return;
       if (field.type === "checkbox") field.checked = Boolean(value);
       else if (Array.isArray(value)) field.value = key === "images" ? value.join("\n") : value.join(", ");
-      else field.value = value ?? "";
+      else {
+        ensureSelectOption(field, value);
+        field.value = currencyFields.includes(key) ? normalizeCurrency(value) : value ?? "";
+      }
     });
+    updateFeaturesCount();
   }
 
   function readForm() {
@@ -52,6 +97,9 @@
       suites: Number(data.suites || 0),
       bathrooms: Number(data.bathrooms || 0),
       parking: Number(data.parking || 0),
+      price: normalizeCurrency(data.price),
+      condo: normalizeCurrency(data.condo),
+      iptu: normalizeCurrency(data.iptu),
       featured: form.elements.featured.checked,
       features: data.features.split(",").map((item) => item.trim()).filter(Boolean),
       images: data.images.split(/\r?\n/).map((item) => item.trim()).filter(Boolean)
@@ -68,6 +116,26 @@
     saveLocal();
     renderList();
     fillForm();
+  });
+
+  form.elements.features.addEventListener("input", updateFeaturesCount);
+  currencyFields.forEach((name) => {
+    form.elements[name].addEventListener("blur", () => {
+      form.elements[name].value = normalizeCurrency(form.elements[name].value);
+    });
+  });
+
+  generateImagesBtn.addEventListener("click", () => {
+    const prefix = imagePrefix.value.trim();
+    const total = Number(imageCount.value || 0);
+    if (!prefix || !Number.isInteger(total) || total < 1) {
+      alert("Informe o prefixo e uma quantidade valida.");
+      return;
+    }
+    form.elements.images.value = Array.from({ length: total }, (_, index) => {
+      const suffix = String(index + 1).padStart(3, "0");
+      return `assets/imoveis/${prefix}${suffix}.jpg`;
+    }).join("\n");
   });
 
   document.querySelector("#newBtn").addEventListener("click", () => {

@@ -107,13 +107,15 @@ textarea { resize: vertical; }
 .admin-item.active { border-color: var(--brand); box-shadow: inset 4px 0 0 var(--brand); }
 .form-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .editor { display: grid; gap: 14px; }
+.image-generator { display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: end; }
+.image-generator button { height: 43px; }
 .editor-actions { display: flex; gap: 10px; align-items: center; justify-content: flex-end; flex-wrap: wrap; }
 .danger { border-color: #e7caca; color: var(--danger); }
 
 @media (max-width: 900px) {
   .topbar { align-items: flex-start; flex-direction: column; }
   .search-band, .content-grid, .detail, .admin-layout, .broker-section, .footer-grid { grid-template-columns: 1fr; }
-  .filters, .form-grid { grid-template-columns: 1fr; }
+  .filters, .form-grid, .image-generator { grid-template-columns: 1fr; }
   .brand-logo { width: 68px; height: 56px; }
   .hero-top { min-height: auto; padding-bottom: 24px; }
   .utility-bar, .hero-nav { align-items: flex-start; flex-direction: column; }
