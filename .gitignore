@@ -1,15 +1,6 @@
-# OS
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# Logs and temp
-*.log
-*.tmp
-*.temp
-*.bak
-*.swp
-
-# Local env/editor
 .vscode/
 .idea/
+*.log

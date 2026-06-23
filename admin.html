@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin | Augusto Seixas</title>
+  <script>
+    (function () {
+      const password = "site-corretor2026";
+      if (sessionStorage.getItem("site-corretor2026-admin") === "ok") return;
+      const answer = prompt("Digite a senha do painel administrativo:");
+      if (answer === password) {
+        sessionStorage.setItem("site-corretor2026-admin", "ok");
+        return;
+      }
+      alert("Senha incorreta.");
+      location.href = "index.html";
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="admin-body">
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="logo.jpg" alt="Augusto Seixas">
+      <span><strong>Painel simples</strong><small>Cadastro local de anuncios</small></span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Ver site</a>
+      <button id="exportBtn" type="button">Exportar dados</button>
+      <label class="import-btn">Importar<input id="importFile" type="file" accept=".json,.js"></label>
+    </nav>
+  </header>
+
+  <main class="admin-layout">
+    <section class="admin-list">
+      <div class="section-head">
+        <h1>Imoveis</h1>
+        <button id="newBtn" type="button">Novo anuncio</button>
+      </div>
+      <div id="adminItems"></div>
+    </section>
+
+    <form id="propertyForm" class="editor">
+      <div class="section-head">
+        <h2 id="formTitle">Editar anuncio</h2>
+        <button type="submit">Salvar</button>
+      </div>
+      <div class="form-grid">
+        <label>ID<input name="id" required></label>
+        <label>Referencia<input name="ref" required></label>
+        <label>Titulo<input name="title" required></label>
+        <label>Tipo<input name="type" required></label>
+        <label>Finalidade<input name="purpose" required></label>
+        <label>Cidade<input name="city"></label>
+        <label>Estado<input name="state" value="RJ"></label>
+        <label>Bairro<input name="neighborhood"></label>
+        <label>Preco<input name="price"></label>
+        <label>Condominio<input name="condo"></label>
+        <label>IPTU<input name="iptu"></label>
+        <label>Dormitorios<input name="bedrooms" type="number" min="0"></label>
+        <label>Suites<input name="suites" type="number" min="0"></label>
+        <label>Banheiros<input name="bathrooms" type="number" min="0"></label>
+        <label>Vagas<input name="parking" type="number" min="0"></label>
+        <label>Area<input name="area"></label>
+        <label>Status<select name="status"><option value="disponivel">Disponivel</option><option value="sob-proposta">Sob proposta</option><option value="vendido">Vendido</option><option value="oculto">Oculto</option></select></label>
+      </div>
+      <label>Resumo<textarea name="summary" rows="3"></textarea></label>
+      <label>Descricao<textarea name="description" rows="7"></textarea></label>
+      <label>Caracteristicas, separadas por virgula<textarea name="features" rows="3"></textarea></label>
+      <label>Imagens, uma por linha<textarea name="images" rows="5"></textarea></label>
+      <div class="editor-actions">
+        <label><input name="featured" type="checkbox"> Destaque</label>
+        <button id="duplicateBtn" type="button">Duplicar</button>
+        <button id="deleteBtn" type="button" class="danger">Excluir</button>
+      </div>
+      <p class="hint">O painel salva no navegador para edicao rapida. Use "Exportar dados" para gerar o arquivo que substitui `data/imoveis.js` na publicacao.</p>
+    </form>
+  </main>
+
+  <script src="data/imoveis.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
