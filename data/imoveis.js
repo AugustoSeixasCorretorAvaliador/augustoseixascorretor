@@ -192,7 +192,7 @@ window.IMOVEIS_SEED = [
     "city": "Niteroi",
     "state": "RJ",
     "neighborhood": "Santa Rosa",
-    "price": "R$ 499.000",
+    "price": "R$ 579.000",
     "condo": "R$ 753,00",
     "iptu": "252,00",
     "bedrooms": 2,
