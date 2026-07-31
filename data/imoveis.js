@@ -76,7 +76,7 @@ window.IMOVEIS_SEED = [
     "city": "Mangaratiba",
     "state": "RJ",
     "neighborhood": "Conceicao de Jacarei",
-    "price": "SOB PROPOSTA",
+    "price": "V E N D I D O",
     "condo": "R$ 1.574,00",
     "iptu": "288,00",
     "bedrooms": 2,
