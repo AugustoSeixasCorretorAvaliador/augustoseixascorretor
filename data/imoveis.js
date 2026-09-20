@@ -257,6 +257,7 @@ window.IMOVEIS_SEED = [
       "assets/imoveis/202603301718113225.jpg",
       "assets/imoveis/202603301718132334.jpg",
       "assets/imoveis/20260330171814198.jpg",
+      "assets/imoveis/2026033017181560333.jpg",
       "assets/imoveis/202603301718156033.jpg"
     ]
   },
