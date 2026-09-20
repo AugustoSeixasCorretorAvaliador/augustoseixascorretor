@@ -165,7 +165,7 @@ window.IMOVEIS_SEED = [
     "status": "V E N D I D O",
     "featured": true,
     "summary": "Loja de esquina no Shopping Center V, com duas vitrines e giral.",
-    "description": "Oportunidade no coracao de Icarai: loja de 32 m2 no Shopping Center V, entre as ruas Gaviao Peixoto e Lopes Trovao. Ponto de esquina com duas vitrines, copa funcional, giral para estoque e ar-condicionado Split Inverter. Imovel ocupado por inquilino ate jul/2027.",
+    "description": "Oportunidade no  coracao de Icarai: loja de 32 m2 no Shopping Center V, entre as ruas Gaviao Peixoto e Lopes Trovao. Ponto de esquina com duas vitrines, copa funcional, giral para estoque e ar-condicionado Split Inverter. Imovel ocupado por inquilino ate jul/2027.",
     "features": [
       "Ar condicionado",
       "Copa",
