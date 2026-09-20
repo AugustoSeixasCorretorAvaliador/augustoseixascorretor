@@ -154,7 +154,7 @@ window.IMOVEIS_SEED = [
     "city": "Niteroi",
     "state": "RJ",
     "neighborhood": "Icarai",
-    "price": "R$ 279.000",
+    "price": "V E N D I D O",
     "condo": "R$ 589,68",
     "iptu": "90,48",
     "bedrooms": 0,
