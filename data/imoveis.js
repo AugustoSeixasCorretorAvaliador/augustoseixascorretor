@@ -233,7 +233,7 @@ window.IMOVEIS_SEED = [
     "price": "R$ 950.00.000",
     "condo": "2031,00",
     "iptu": "431,00",
-    "bedrooms": 3,
+    "bedrooms": 4,
     "suites": 2,
     "bathrooms": 4,
     "parking": 1,
