@@ -8,7 +8,7 @@ window.IMOVEIS_SEED = [
     "city": "Niteroi",
     "state": "RJ",
     "neighborhood": "ICARAÍ",
-    "price": "5.000,00",
+    "price": "4.500,00",
     "condo": "0,00",
     "iptu": "160,00",
     "bedrooms": 2,
