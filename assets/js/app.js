@@ -3,6 +3,12 @@
   const seed = Array.isArray(window.IMOVEIS_SEED) ? window.IMOVEIS_SEED : [];
   const saved = localStorage.getItem(STORAGE_KEY);
   let properties = saved ? JSON.parse(saved) : seed;
+  // Manter os quatro anúncios de abertura atualizados também em navegadores com cache local.
+  const openingIds = ["1782244891515", "20261124-largo-marrao-1250", "20261124-icarai-680", "20261124-icarai-garden-700"];
+  const opening = openingIds.map((id) => seed.find((item) => item.id === id)).filter(Boolean);
+  const remaining = properties.filter((item) => !openingIds.includes(item.id));
+  const knownIds = new Set([...opening, ...remaining].map((item) => item.id));
+  properties = [...opening, ...remaining, ...seed.filter((item) => !knownIds.has(item.id))];
 
   const listing = document.querySelector("#listing");
   const totalCount = document.querySelector("#totalCount");
@@ -76,7 +82,7 @@
 
   function card(item) {
     const el = document.createElement("article");
-    el.className = "property-card";
+    el.className = `property-card${item.imageFit === "contain" ? " property-poster" : ""}`;
     el.tabIndex = 0;
     el.innerHTML = `
       <img src="${item.images?.[0] || ""}" alt="${item.title}">
@@ -116,7 +122,7 @@
     location.hash = `imovel-${item.id}`;
     detail.innerHTML = `
       <section class="detail">
-        <div class="gallery">${(item.images || []).map((src) => `<img src="${src}" alt="${item.title}">`).join("")}</div>
+        <div class="gallery${item.imageFit === "contain" ? " gallery-poster" : ""}">${(item.images || []).map((src) => `<img src="${src}" alt="${item.title}">`).join("")}</div>
         <div class="detail-info">
           <span class="status ${item.status}">${statusLabel(item.status)}</span>
           <h1>${item.title}</h1>

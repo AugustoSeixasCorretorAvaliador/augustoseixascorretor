@@ -124,3 +124,7 @@ textarea { resize: vertical; }
   .hero-search { width: calc(100% - 32px); margin-top: 24px; }
   .whatsapp-float { left: 16px; right: 16px; text-align: center; }
 }
+
+/* Slides dos anúncios: preservar a imagem completa. */
+.property-card.property-poster img { object-fit: contain; background: #00243f; }
+.gallery.gallery-poster img { aspect-ratio: auto; object-fit: contain; }

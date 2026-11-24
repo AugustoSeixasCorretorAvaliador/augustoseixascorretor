@@ -68,6 +68,98 @@ window.IMOVEIS_SEED = [
     ]
   },
   {
+    "purpose": "Venda",
+    "city": "Niterói",
+    "state": "RJ",
+    "status": "disponivel",
+    "featured": true,
+    "imageFit": "contain",
+    "id": "20261124-largo-marrao-1250",
+    "ref": "LM1250",
+    "title": "Imóvel comercial à venda no Largo do Marrão, 151 m²",
+    "type": "Imóvel Comercial",
+    "neighborhood": "Largo do Marrão",
+    "price": "1.250.000,00",
+    "condo": "",
+    "iptu": "450,00",
+    "area": "151 m²",
+    "summary": "Rua Lopes Trovão, 469: imóvel reformado com 3 pavimentos, em frente à Caixa.",
+    "description": "Imóvel comercial na Rua Lopes Trovão, 469, no Largo do Marrão, Niterói. São 151 m² distribuídos em 3 pavimentos. Reformado e 100% legalizado, em frente à Caixa Econômica Federal. IPTU comercial de R$ 450,00 por mês.",
+    "features": [
+      "3 pavimentos",
+      "Reformado",
+      "100% legalizado",
+      "IPTU comercial: R$ 450,00/mês",
+      "Em frente à Caixa Econômica Federal"
+    ],
+    "images": [
+      "assets/imoveis/largo-marrao-1250000.jpeg"
+    ]
+  },
+  {
+    "purpose": "Venda",
+    "city": "Niterói",
+    "state": "RJ",
+    "status": "disponivel",
+    "featured": true,
+    "imageFit": "contain",
+    "id": "20261124-icarai-680",
+    "ref": "IC680",
+    "title": "Apartamento à venda na esquina da Praia de Icaraí, 70 m²",
+    "type": "Apartamento",
+    "neighborhood": "Icaraí",
+    "price": "680.000,00",
+    "condo": "1.100,00",
+    "iptu": "400,00",
+    "area": "70 m²",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "summary": "Na esquina da Praia de Icaraí, com vista parcial para o mar, sol da manhã e portaria 24h.",
+    "description": "Apartamento de 70 m² no miolo de Icaraí, na esquina da praia, em Niterói. Possui 2 quartos e 2 banheiros, vista parcial para o mar, sol da manhã e portaria 24 horas. Condomínio de R$ 1.100,00 e IPTU informado de R$ 400,00.",
+    "features": [
+      "Vista parcial para o mar",
+      "Sol da manhã",
+      "Portaria 24h",
+      "Na esquina da Praia de Icaraí"
+    ],
+    "images": [
+      "assets/imoveis/icarai-praia-680000.jpeg"
+    ]
+  },
+  {
+    "purpose": "Venda",
+    "city": "Niterói",
+    "state": "RJ",
+    "status": "disponivel",
+    "featured": true,
+    "imageFit": "contain",
+    "id": "20261124-icarai-garden-700",
+    "ref": "IC700",
+    "title": "Apartamento garden à venda em Icaraí, 140 m²",
+    "type": "Apartamento",
+    "neighborhood": "Icaraí",
+    "price": "700.000,00",
+    "condo": "1.350,00",
+    "iptu": "446,00",
+    "area": "140 m²",
+    "bedrooms": 3,
+    "suites": 1,
+    "bathrooms": 3,
+    "parking": 1,
+    "summary": "Garden na Rua Gavião Peixoto, perto do Campo de São Bento, com 3 quartos e 1 vaga.",
+    "description": "Apartamento garden de 140 m² na Rua Gavião Peixoto, no miolo de Icaraí, Niterói, perto do Campo de São Bento. Possui 3 quartos, sendo 1 suíte, 3 banheiros e 1 vaga. Aceita financiamento. Condomínio de R$ 1.350,00 e IPTU de R$ 446,00 por mês.",
+    "features": [
+      "Garden",
+      "Perto do Campo de São Bento",
+      "Rua Gavião Peixoto",
+      "Aceita financiamento",
+      "IPTU: R$ 446,00/mês"
+    ],
+    "images": [
+      "assets/imoveis/icarai-garden-700000.jpeg"
+    ]
+  },
+  {
     "id": "3964228",
     "ref": "8007",
     "title": "Apartamento para Venda, Mangaratiba / RJ",
